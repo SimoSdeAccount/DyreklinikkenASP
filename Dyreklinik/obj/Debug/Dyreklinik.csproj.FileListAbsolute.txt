@@ -1,0 +1,13 @@
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\DyreklinikDB.mdf
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\DyreklinikDB_log.ldf
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\Dyreklinik.exe.config
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\Dyreklinik.exe
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\Dyreklinik.pdb
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\EntityFramework.dll
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\EntityFramework.xml
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.csprojAssemblyReference.cache
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.csproj.CopyComplete
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.exe
+C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.pdb
