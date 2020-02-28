@@ -8,7 +8,7 @@ namespace Dyreklinik
 {
     class KolonneSelektor
     {
-        protected List<string> getUpdateKolonner(List<string> kolonner, List<string> muligeKolonner)
+        protected List<string> GetUpdateKolonner(List<string> kolonner, List<string> muligeKolonner)
         {
             List<string> UpdateKolonner = new List<string>();
             for (int i = 0; i < kolonner.Count; i++)
@@ -23,7 +23,7 @@ namespace Dyreklinik
             }
             return UpdateKolonner;
         }
-        protected List<object> getUpdateGetSetters(List<string> valgteKolonner, List<string> muligeKolonner, List<object> getSetters)
+        protected List<object> GetUpdateGetSetters(List<string> valgteKolonner, List<string> muligeKolonner, List<object> getSetters)
         {
             List<object> UpdateGetSetters = new List<object>();
             for (int i = 0; i < valgteKolonner.Count; i++)

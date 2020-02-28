@@ -37,7 +37,7 @@ namespace Dyreklinik
             string slutProdukt = segment02 + ");";
             return slutProdukt;
         }
-        protected string GenerateUpdateStatement(string tabel, List<string> kolonner, string conditionColumn, string condition)
+        protected string GenerateUpdateStatement(string tabel, List<string> kolonner, string betingelsesKolonner, string betingelser)
         {
             string Segment01 = "UPDATE " + tabel + " SET " ;
             for (int i = 0; i < kolonner.Count; i++)
@@ -51,8 +51,36 @@ namespace Dyreklinik
                     Segment01 += kolonner[i] + "=" + "@" + kolonner[i];
                 }
             }
-            string slutProdukt = Segment01 + " WHERE " + conditionColumn + " = " + condition;
+            string slutProdukt = Segment01 + " WHERE " + betingelsesKolonner + " = " + betingelser;
             return slutProdukt;
+        }
+        protected string GenerateUpdateStatement(string tabel, List<string> kolonner, List<string> betingelsesKolonner, List<string> betingelser)
+        {
+            string Segment01 = "UPDATE " + tabel + " SET ";
+            for (int i = 0; i < kolonner.Count; i++)
+            {
+                if (i != kolonner.Count - 1)
+                {
+                    Segment01 += kolonner[i] + "=" + "@" + kolonner[i] + ", ";
+                }
+                else
+                {
+                    Segment01 += kolonner[i] + "=" + "@" + kolonner[i];
+                }
+            }
+            string Segment02 = Segment01 + " WHERE ";
+            for (int i = 0; i < betingelsesKolonner.Count; i++)
+            {
+                if(i != betingelsesKolonner.Count - 1)
+                {
+                    Segment02 += betingelsesKolonner[i] + " = " + betingelser[i] + " AND ";
+                }
+                else
+                {
+                    Segment02 += betingelsesKolonner[i] + " = " + betingelser[i];
+                }
+            }
+            return Segment02;
         }
         protected string GenerateDeleteStatement(string tabel, string betingelsesKolonne, string betingelse)
         {

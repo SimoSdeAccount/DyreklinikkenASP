@@ -27,6 +27,18 @@ namespace Dyreklinik
         public void Update(string Tabel, List<string> kolonneNavne, List<object> getSetterVærdier, string BetingelsesKolonne, string Betingelse)
         {
             string UpdateQuery = GenerateUpdateStatement(Tabel, kolonneNavne,  BetingelsesKolonne, Betingelse);
+            Console.WriteLine(UpdateQuery);
+            SqlCommand UpdateCmd = new SqlCommand(UpdateQuery, con);
+            for (int i = 0; i < kolonneNavne.Count; i++)
+            {
+                UpdateCmd.Parameters.AddWithValue("@" + kolonneNavne[i], getSetterVærdier[i]);
+            }
+            Executer(UpdateCmd, true);
+        }
+        public void Update(string Tabel, List<string> kolonneNavne, List<object> getSetterVærdier, List<string> BetingelsesKolonner, List<string> Betingelser)
+        {
+            string UpdateQuery = GenerateUpdateStatement(Tabel, kolonneNavne, BetingelsesKolonner, Betingelser);
+            Console.WriteLine(UpdateQuery);
             SqlCommand UpdateCmd = new SqlCommand(UpdateQuery, con);
             for (int i = 0; i < kolonneNavne.Count; i++)
             {

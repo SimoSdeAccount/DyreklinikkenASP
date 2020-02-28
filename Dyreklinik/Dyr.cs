@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
+using System.Data.SqlClient;
 namespace Dyreklinik
 {
-    class Dyr
+    class Dyr : KolonneSelektor
     {
+        public Dyr(SqlConnection c)
+        {
+            con = c;
+        }
+        private SqlConnection con;
+        private int id;
         private string navn;
         private int alder;
         private int ejerid;
         private int kønid;
         private int artid;
-
+        private static List<string> Kolonner= new List<string> { "Navn", "Alder", "EjerId", "KønId", "ArtId" };
+        public int GetSetId
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string GetSetNavn
         {
             get { return navn; }
@@ -38,6 +50,27 @@ namespace Dyreklinik
         {
             get { return artid; }
             set { artid = value; }
+        }
+        public string insert()
+        {
+            List<object> getSetters = new List<object> { GetSetNavn, GetSetAlder, GetSetEjerid, GetSetKønId, GetSetArtId };
+            DataBind insertBind = new DataBind(con);
+            return insertBind.Insert("Dyr", Kolonner, getSetters, "Id");
+        }
+        public void update(List<string> kolonner)
+        {
+            List<string> UpdateKolonner = GetUpdateKolonner(kolonner, Kolonner);
+            List<object> UpdateGetSetters = GetUpdateGetSetters(kolonner, Kolonner, new List<object> { GetSetNavn, GetSetAlder, GetSetEjerid, GetSetKønId, GetSetArtId });
+            DataBind updateBind = new DataBind(con);
+            updateBind.Update("Dyr", UpdateKolonner, UpdateGetSetters, "Id", GetSetId.ToString());
+        }
+        public void delete()
+        {
+            DataBind deleteBind = new DataBind(con);
+            deleteBind.Delete("Dyr", "Id", GetSetId.ToString());
+            /*Huskenote:
+             man skal egentlig kunne vælge hvilken kolonne man vil lave sin condition ud fra. Eventuelt ret med en parameter.
+             */
         }
     }
 }

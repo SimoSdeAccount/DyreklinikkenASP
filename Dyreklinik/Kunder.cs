@@ -65,8 +65,8 @@ namespace Dyreklinik
         }
         public void Update(List<string> kolonner)
         {
-            List<string> UpdateKolonner = getUpdateKolonner(kolonner, Kolonner);
-            List<object> UpdateGetSetters = getUpdateGetSetters(kolonner, Kolonner, new List<object> { GetSetNavn, GetSetAlder, GetSetVej, GetSetTelefon, GetSetEmail, GetSetPostNummer });
+            List<string> UpdateKolonner = GetUpdateKolonner(kolonner, Kolonner);
+            List<object> UpdateGetSetters = GetUpdateGetSetters(kolonner, Kolonner, new List<object> { GetSetNavn, GetSetAlder, GetSetVej, GetSetTelefon, GetSetEmail, GetSetPostNummer });
             DataBind updateBind = new DataBind(con);
             updateBind.Update("Kunder", UpdateKolonner, UpdateGetSetters, "Id", GetSetId.ToString());
         }

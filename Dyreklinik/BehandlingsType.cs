@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Dyreklinik
 {
-    class BehandlingsType
+    class BehandlingsType : KolonneSelektor
     {
+        public BehandlingsType(SqlConnection c)
+        {
+            con = c;
+        }
+        private SqlConnection con;
         private string behandlingsType;
         private int pris;
-
         public string GetSetBehandlingsType
         {
             get { return behandlingsType; }
@@ -20,6 +26,26 @@ namespace Dyreklinik
         {
             get { return pris; }
             set { pris = value; }
+        }
+        public string Insert()
+        {
+            List<string> Kolonner = new List<string> { "Behandlingtype", "Pris" };
+            List<object> getSetters = new List<object> { GetSetBehandlingsType, GetSetPris };
+            DataBind insertBind = new DataBind(con);
+            return insertBind.Insert("BehandlingsType", Kolonner, getSetters, "Behandlingtype");
+        }
+        public void Update(List<string> kolonner, string behandlingsType = null)
+        {
+            List<string> Kolonner = new List<string> {"Behandlingtype", "Pris" };
+            List<string> UpdateKolonner = GetUpdateKolonner(kolonner, Kolonner);
+            List<object> UpdateGetSetters = GetUpdateGetSetters(kolonner, Kolonner, new List<object> {behandlingsType, GetSetPris });
+            DataBind updateBind = new DataBind(con);
+            updateBind.Update("BehandlingsType", UpdateKolonner, UpdateGetSetters, "Behandlingtype", GetSetBehandlingsType);
+        }
+        public void Delete()
+        {
+            DataBind deleteBind = new DataBind(con);
+            deleteBind.Delete("BehandlingsType", "Behandlingtype", GetSetBehandlingsType);
         }
     }
 }
