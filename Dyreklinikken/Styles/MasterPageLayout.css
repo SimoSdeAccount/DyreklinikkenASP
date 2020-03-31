@@ -1,0 +1,41 @@
+﻿body {
+    font-family:Arial;
+}
+#HeaderContent {
+    display:flex;
+    align-items:center;
+    float:left;
+    width:100%;
+    height:15vh;
+    background-color:deeppink;
+}
+#HeaderLogo {
+    margin-left:25px;
+    font-size:50px;
+}
+#AsideContent {
+    float:left;
+    width:20%;
+    height:80vh;
+    background-color:blueviolet;
+}
+#MainContent {
+    float:left;
+    width:79%;
+    height:79vh;
+    background-color: greenyellow;
+    padding-top:1vh;
+    padding-left:1%;
+}
+#FooterContent {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    float:left;
+    width:100%;
+    height:5vh;
+    background-color:darkolivegreen;
+}
+#FooterText {
+    font-size: 15px;
+}

@@ -11,3 +11,16 @@ C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.csprojAsse
 C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.csproj.CopyComplete
 C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.exe
 C:\Users\HFGF\source\repos\Dyreklinik\Dyreklinik\obj\Debug\Dyreklinik.pdb
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\DyreklinikDB.mdf
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\DyreklinikDB_log.ldf
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\Dyreklinik.exe.config
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\Dyreklinik.exe
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\Dyreklinik.pdb
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\EntityFramework.dll
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\EntityFramework.xml
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\obj\Debug\Dyreklinik.csprojAssemblyReference.cache
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\obj\Debug\Dyreklinik.csproj.CopyComplete
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\obj\Debug\Dyreklinik.exe
+C:\Users\Simon\source\repos\Dyreklinikken\Dyreklinik\obj\Debug\Dyreklinik.pdb

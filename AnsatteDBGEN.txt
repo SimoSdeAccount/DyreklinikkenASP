@@ -1,0 +1,26 @@
+CREATE TABLE Stilling (
+Navn nvarchar PRIMARY KEY
+)
+CREATE TABLE Speciale (
+Navn nvarchar PRIMARY KEY
+)
+CREATE TABLE Postnummer (
+PostNummer char(4) PRIMARY KEY not null,  
+ByNavn nvarchar not null
+)
+CREATE TABLE Ansatte (
+Id int IDENTITY(1,1) PRIMARY KEY not null,
+Navn nvarchar not null,
+Vej nvarchar not null,
+PostNummer char(4) not null,
+Telefon char(8) not null,
+Speciale nvarchar not null,
+Stilling nvarchar not null
+FOREIGN KEY (Speciale) REFERENCES Speciale(Navn),
+FOREIGN KEY (Stilling) REFERENCES Stilling(Navn)
+)
+CREATE TABLE AnsatteLogin (
+AnsatID int not null,
+Brugernavn nvarchar not null,
+Kodeord nvarchar not null
+FOREIGN KEY (AnsatID) REFERENCES Ansatte(Id) 

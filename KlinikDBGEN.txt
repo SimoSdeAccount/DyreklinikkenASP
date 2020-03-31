@@ -1,0 +1,46 @@
+Kode til at generere database:
+
+CREATE TABLE PostNummer (
+Postnummer char(4) not null,
+Bynavn nvarchar(50) not null
+PRIMARY KEY (Postnummer)
+)
+CREATE TABLE Kunder (
+Id int IDENTITY(1,1) PRIMARY KEY,
+Navn nvarchar(50) not null,
+Alder int not null,
+Vej nvarchar(50) not null,
+Telefon char(8) not null,
+email nvarchar(50) not null,
+Postnummer char(4) FOREIGN KEY REFERENCES PostNummer(Postnummer) not null
+)
+CREATE TABLE Køn (
+Id int IDENTITY(1,1) PRIMARY KEY,
+Navn nvarchar(50) not null
+)
+CREATE TABLE Art (
+Id int IDENTITY(1,1) PRIMARY KEY,
+Navn nvarchar(50) not null
+)
+CREATE TABLE Dyr (
+Id int IDENTITY(1,1) PRIMARY KEY,
+Navn nvarchar(50) not null,
+Alder int not null,
+EjerId int FOREIGN KEY REFERENCES Kunder(Id) not null,
+KønId int FOREIGN KEY REFERENCES Køn(Id) not null,
+ArtId int FOREIGN KEY REFERENCES Art(Id) not null
+)
+CREATE TABLE Behandling (
+Id int IDENTITY(1,1) PRIMARY KEY,
+Dato date not null,
+Tid time not null,
+DyrId int FOREIGN KEY REFERENCES Dyr(Id) not null
+)
+CREATE TABLE BehandlingsType (
+Behandlingtype nvarchar(50) not null,
+Pris int not null
+PRIMARY KEY (Behandlingtype)
+)
+CREATE TABLE BehandlingBehandlingsType (
+BehandlingId int FOREIGN KEY REFERENCES Behandling(Id) not null,
+Behandlingstype nvarchar(50) FOREIGN KEY REFERENCES BehandlingsType(Behandlingtype)not null

@@ -1,0 +1,35 @@
+﻿body {
+}
+#LoginFormWrapper {
+    width:80%;
+    margin:auto;
+    margin-top:20px;
+}
+#LoginHeader {
+    padding:5px;
+    background-color:aquamarine;
+}
+#LoginTxtFields {
+    padding:5px;
+    background-color:darkcyan;
+}
+#LoginFooter {
+    padding:5px;
+    background-color:hotpink;
+}
+#MenuBtnContainer {
+    padding-top:20px;
+    background-color: blueviolet;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+}
+.MenuBtns {
+    background-color: deepskyblue;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:80%;
+}
+

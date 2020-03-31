@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/DyreklinikLayout.Master" AutoEventWireup="true" CodeBehind="LoggedIn.master.cs" Inherits="Dyreklinikken.MenuMasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../Styles/GeneralStyles.css" type="text/css" rel="stylesheet" />
+   <asp:ContentPlaceHolder ID="pageSpecificStyles" runat="server">
+   </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="SideContent" runat="server">
+    <div id="MenuBtnContainer">
+        <asp:Button class="MenuBtns" runat="server" Text="Forside" OnClick="ForsideBtnClick" />
+        <asp:Button class="MenuBtns" runat="server" Text="Behandling" OnClick="BehandlingBtnClick"/>
+        <asp:Button class="MenuBtns" runat="server" Text="Kunde" OnClick="KundeBtnClick"/>
+        <asp:Button class="MenuBtns" runat="server" Text="Patient" OnClick="PatientBtnClick" />
+        <asp:Button class="MenuBtns" runat="server" Text="Faktura" OnClick="FakturaBtnClick" />
+        <asp:Button class="MenuBtns" runat="server" Text="Behandlings historik" OnClick="HistorikBtnClick" />
+        <asp:Button class="MenuBtns" runat="server" Text="Log ud" OnClick="LogUdBtnClick" />
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="PrimaryContent" runat="server">
+    <asp:ContentPlaceHolder ID="LoggedInPrimaryContent" runat="server">
+   </asp:ContentPlaceHolder>
+</asp:Content>

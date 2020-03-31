@@ -13,31 +13,38 @@ namespace Dyreklinik
     {
         static void Main(string[] args)
         {
-           // OpretPostnummer();
-           //OpdaterPostnummer();
-           // DeletePostnummer();
-              //OpretKunde();
-         //    UpdateKunde();
+            //     OpretPostnummer();
+            //OpdaterPostnummer();
+            // DeletePostnummer();
+            //OpretKunde();
+            //    UpdateKunde();
             //  DeleteKunde();
-           //  OpretArt();
+            //  OpretArt();
             // UpdateArt();
             //  DeleteArt();
-          //  OpretKøn();
+            //  OpretKøn();
             //  UpdateKøn();
             // DeleteKøn();
-           //   OpretDyr();
+            //   OpretDyr();
             //   OpdaterDyr();
             //  DeleteDyr();
-           // OpretBehandling();
+            // OpretBehandling();
             // OpdaterBehandling();
             // DeleteBehandling();
-          //  OpretBehandlingType();
-                 UpdateBehandlingType();
+            //  OpretBehandlingType();
+            //    UpdateBehandlingType();
             // DeleteBehandlingType();
-           //   OpretBehandlingBehandlingstype();
-         //   UpdateBehandlingBehandlingstype();
+            //   OpretBehandlingBehandlingstype();
+            //   UpdateBehandlingBehandlingstype();
+            PrintFaktura();
             Console.ReadLine();
         }
+        static void PrintFaktura()
+        {
+            Faktura nyFaktura = new Faktura(Con());
+            nyFaktura.PrintFaktura();
+        }
+
         static void DeleteBehandlingBehandlingstype()
         {
             BehandlingBehandlingstype deleteBehandlingBehandlingstype = new BehandlingBehandlingstype(Con());
@@ -50,7 +57,6 @@ namespace Dyreklinik
             List<string> derplist = new List<string> { "Behandlingtype" };
             List<string> kagederp = new List<string> { "3", "'Årligttjek'" };
             updateBehandlingBehandlingstype.Update(derplist, kagederp);
-            //
         }
         static void OpretBehandlingBehandlingstype()
         {
@@ -197,8 +203,8 @@ namespace Dyreklinik
         static void OpretPostnummer()
         {
             PostNummer PostNummer = new PostNummer(Con());
-            PostNummer.GetSetPostNummer = "8700";
-            PostNummer.GetSetBy = "Horsens";
+            PostNummer.GetSetPostNummer = "6780";
+            PostNummer.GetSetBy = "SabineBy";
             Console.WriteLine(PostNummer.Insert());
         }
         static void OpdaterPostnummer()
@@ -216,14 +222,15 @@ namespace Dyreklinik
         }
         static SqlConnection Con()
         {
-            SqlConnectionStringBuilder conString = new SqlConnectionStringBuilder()
-            {
-                InitialCatalog = "DyreklinikDB",
-                UserID = "SimonHC",
-                Password = "1234",
-                DataSource = "Localhost"
-            };
-            return new SqlConnection(conString.ConnectionString);
+            /*    SqlConnectionStringBuilder conString = new SqlConnectionStringBuilder()
+                {
+                    InitialCatalog = "DyreklinikDB",
+                    UserID = "SimonHC",
+                    Password = "1234",
+                    DataSource = "Localhost"
+                };
+                return new SqlConnection(conString.ConnectionString);*/
+            return new SqlConnection(ConfigurationManager.ConnectionStrings["DyreklinikDB"].ConnectionString);
         }
     }
 }

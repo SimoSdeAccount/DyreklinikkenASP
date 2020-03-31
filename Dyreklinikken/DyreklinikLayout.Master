@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DyreklinikLayout.master.cs" Inherits="Dyreklinikken.DyreklinikLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Dyrelæge klinik intranet</title>
+    <link rel="stylesheet" type="text/css" href="Styles/MasterPageLayout.css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <Header id="HeaderContent">
+            <h1 id="HeaderLogo">
+                Dyreklinikken
+            </h1>
+        </Header>
+        <Aside id="AsideContent">
+            <asp:ContentPlaceHolder ID="SideContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </Aside>
+        <Main id="MainContent">
+            <asp:ContentPlaceHolder ID="PrimaryContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </Main>
+        <footer id="FooterContent">
+            <p id="FooterText">
+                copyright c dyreklinik
+            </p>
+        </footer>
+    </form>
+</body>
+</html>
